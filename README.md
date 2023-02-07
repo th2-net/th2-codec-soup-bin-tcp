@@ -1,4 +1,4 @@
-# SoupBinTCP Codec v0.0.1
+# SoupBinTCP Codec v0.0.2
 
 ## Configuration
 
