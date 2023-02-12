@@ -91,7 +91,6 @@ class SoupBinTcpCodec(private val settings: SoupBinTcpCodecSettings) : IPipeline
 
             metadataBuilder.apply {
                 id = header?.metadata?.id ?: payload?.metadata?.id
-                timestamp = header?.metadata?.timestamp ?: payload?.metadata?.timestamp
                 protocol = PROTOCOL
                 header?.metadata?.propertiesMap?.run(::putAllProperties)
                 payload?.metadata?.propertiesMap?.run(::putAllProperties)
@@ -141,7 +140,6 @@ class SoupBinTcpCodec(private val settings: SoupBinTcpCodecSettings) : IPipeline
 
         header.metadataBuilder.apply {
             this.idBuilder.mergeFrom(metadata.id).addSubsequence(0)
-            this.timestamp = metadata.timestamp
             this.messageType = decoder.name
             this.protocol = PROTOCOL
             putAllProperties(metadata.propertiesMap)
@@ -164,7 +162,6 @@ class SoupBinTcpCodec(private val settings: SoupBinTcpCodecSettings) : IPipeline
 
         payload.metadataBuilder.apply {
             this.idBuilder.mergeFrom(metadata.id).addSubsequence(1)
-            this.timestamp = metadata.timestamp
             this.protocol = PROTOCOL
             putAllProperties(metadata.propertiesMap)
         }
