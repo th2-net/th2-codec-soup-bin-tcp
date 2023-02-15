@@ -1,4 +1,4 @@
-# SoupBinTCP Codec v0.0.1
+# SoupBinTCP Codec v0.0.2
 
 ## Configuration
 
@@ -91,3 +91,10 @@ spec:
     service:
       enabled: false
 ```
+
+# Release notes
+## 0.0.2
++ th2-common -> `3.44.0`
++ th2-bom -> `4.1.0`
++ th2-codec -> `4.7.6`
++ Vulnerability check pipeline step
